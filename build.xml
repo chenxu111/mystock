@@ -2,6 +2,7 @@
 	<!-- set global properties for this build -->
 	<property name="project" value="freemoney"></property>
 	<property name="src" location="src"/>
+	<property name="conf" location="conf"/>
 	<property name="build" location="build"/>
 	<property name="doc" location="doc"/>
 	<property name="sql" location="sql"/>
@@ -32,12 +33,12 @@
 	
 	<target name="config4release">
 		<copy todir="${dist}">
-			<fileset dir="${src}/conf">
+			<fileset dir="${conf}">
 				<include name="**"/>
 			</fileset>
 		</copy>
 		<copy todir="${bin}"> 
-			<fileset dir="${src}/conf">
+			<fileset dir="${conf}">
 			    <include name="*.properties"/>
 			</fileset>
 		</copy>
