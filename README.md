@@ -20,3 +20,19 @@ b. configure enviromental path
 
 build.xml
 
+how to design database
+
+problem:
+CREATE command denied to user 'root'@'localhost' 
+solution:
+
+dbcp
+db connection pool:
+a. initilize 10 connection in pool
+b. use a connection from pool
+c. return connection to pool
+
+a. seperate code from configuration file
+b. independent and reuseable connection pool unit
+c. encapsulate connection pool
+
