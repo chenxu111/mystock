@@ -36,3 +36,25 @@ a. seperate code from configuration file
 b. independent and reuseable connection pool unit
 c. encapsulate connection pool
 
+Dao(Data Access Object)
+
+socket
+service
+dao, model,vo
+database pool
+
+org.freemoney.dao
+AbstractDao
+FundCompanyStockListDao
+FundStockDetailDao
+StockListDao
+
+org.freemoney.dao
+Fund
+FundCompanyStockList
+FundCompanyStockListKey
+FundStockDetail
+StockList
+
+
+
