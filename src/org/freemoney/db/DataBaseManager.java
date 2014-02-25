@@ -155,7 +155,19 @@ public class DataBaseManager {
 			closeStatement(_stmt);
 			releaseConnection(conn);
 		}
+	}
+	
+	public static void main(String[] args) {
+		Connection conn = getConnection();
 		
+		releaseConnection(conn);
+		
+		try {
+			Thread.currentThread().sleep(60 * 1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 }
