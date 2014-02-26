@@ -70,6 +70,22 @@ jdbc批处理
 
 查询数据，封装成需要的数据格式
 
+业务员在系统架构的位置
+org.freemoney.service
+AbstractServer.java
+DataPumpService.java 
+ExportService.java 文件导出类
+
+org.freemoney.utils
+Constant.java
+FileUtil.java
+HandleFile.java
+PropsUtils.java
+Utils.java
+XLSExport.java
+
+管理主程序开发
+简单的console界面
 
 
 
