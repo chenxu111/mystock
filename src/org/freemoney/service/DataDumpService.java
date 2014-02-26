@@ -19,7 +19,7 @@ public class DataDumpService extends AbstractService {
 	 */
 	public void createFundStock(String path, int quarter)
 	{
-		
+		log.info("createFundStock");
 	}
 
 	public FundStockDetailDAO getFundStockDetailDAO() {
