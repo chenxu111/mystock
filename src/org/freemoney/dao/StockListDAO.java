@@ -3,6 +3,7 @@ package org.freemoney.dao;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import org.freemoney.db.DataBaseManager;
 import org.freemoney.model.StockList;
 
 public class StockListDAO extends AbstractDAO {
@@ -12,6 +13,10 @@ public class StockListDAO extends AbstractDAO {
 		super();
 	}
 	
+	/**
+	 * 插入某条记录
+	 * @param record
+	 */
 	public void insert(StockList record)
 	{
 		PreparedStatement pStmt = null;
@@ -30,6 +35,34 @@ public class StockListDAO extends AbstractDAO {
 		{
 			log.error("StockListDAO insert fail",e);
 			e.printStackTrace();
+		}finally
+		{
+			DataBaseManager.closeStatement(pStmt);
+		}
+	}
+	
+	/**
+	 * 删除季度记录
+	 * @param quarter
+	 */
+	public void delete(int quarter)
+	{
+		PreparedStatement pStmt = null;
+		try
+		{			
+			String sql = "delete from stocklist where quarter=?";
+			pStmt = conn.prepareStatement(sql);
+			pStmt.setInt(1, quarter);
+			pStmt.execute();
+			log.info("delete "+sql + "success!");
+		}catch(SQLException e)
+		{
+			log.error("StockListDAO insert fail",e);
+			e.printStackTrace();
+		}
+		finally
+		{
+			DataBaseManager.closeStatement(pStmt);
 		}
 	}
 	
