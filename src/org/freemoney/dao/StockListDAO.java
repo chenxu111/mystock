@@ -37,6 +37,7 @@ public class StockListDAO extends AbstractDAO {
 			e.printStackTrace();
 		}finally
 		{
+			DataBaseManager.closeStatement(pStmt);//必须释放statement
 			DataBaseManager.closeStatement(pStmt);
 		}
 	}
@@ -62,9 +63,8 @@ public class StockListDAO extends AbstractDAO {
 		}
 		finally
 		{
+			DataBaseManager.closeStatement(pStmt);//必须释放statement
 			DataBaseManager.closeStatement(pStmt);
 		}
 	}
-	
-	
 }
