@@ -50,6 +50,43 @@
 		</jar>
 	</target>
 	
+	<target name="install" depends="build">
+		<mkdir dir="${release}"/>
+		<mkdir dir="${release}/conf"/>
+		<copy todir="${release}/conf">
+			<fileset dir="${dist}">
+				<include name="*.properties"/>
+			</fileset>
+		</copy>
+		
+		<copy todir="${release}/conf">
+			<fileset dir="${dist}">
+				<include name="*.bat"/>
+			</fileset>
+		</copy>
+		
+		<copy todir="${release}/lib">
+			<fileset dir="${dist}">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${lib-compile}">
+				<include name="*.jar"/>
+			</fileset>
+		</copy>	
+		
+		<copy todir="${release}/sql">
+			<fileset dir="${sql}">
+				<include name="**"/>
+			</fileset>
+		</copy>
+		
+		<copy todir="${release}/doc">
+			<fileset dir="${doc}">
+				<include name="**"/>
+			</fileset>
+		</copy>
+	</target>
+	
 	<target name="clean" description="clean up">
 		<delete dir="${build}"/>
 		<delete dir="${dist}"/>
