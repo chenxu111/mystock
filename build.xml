@@ -53,15 +53,15 @@
 	<target name="install" depends="build">
 		<mkdir dir="${release}"/>
 		<mkdir dir="${release}/conf"/>
-		<copy todir="${release}/conf">
+		<copy todir="${release}">
 			<fileset dir="${dist}">
-				<include name="*.properties"/>
+				<include name="*.bat"/>
 			</fileset>
 		</copy>
 		
 		<copy todir="${release}/conf">
 			<fileset dir="${dist}">
-				<include name="*.bat"/>
+				<include name="*.properties"/>
 			</fileset>
 		</copy>
 		
